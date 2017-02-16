@@ -1,0 +1,78 @@
+MySQL Commands :
+
+C:\xampp\mysql\bin
+
+mysql.exe -u root --password // login with roor
+
+select version(); // check mysql version
+
+show databases; //show all the databases
+
+select current_date; //show current server time
+
+
+select now(); //current time & date
+
+Calculation :
+
+SELECT SIN(PI()/4), (4+1)*5; // multiple calculation
+
+SELECT COS(PI()/4), (4+1)*5, (12*100)/6*500;
+
+select user(); // As an Admin see all connected user in MySQL Database [e.g : user@host]
+
+CREATE Database Sample; // Create Database Called 'Sample';
+
+// Before : MariaDB [(none)], After MariaDB [Sample] //
+
+Use Sample; // Enter into 'Sample' Database
+
+Show Tables; //Show Tables in This Database
+
+CREATE TABLE table_name (column_name column_type); // Default Demo
+
+CREATE TABLE emp (id int(6) Not Null, name varchar(25), dept varchar(25));
+
+Desc TableName; //Show Entire Table in Descriptive From
+
+Desc emp;
+
+Insert Into emp(id,name,dept) values (2,'Salekul','CSE'), (3,'Rezwan','EEE');
+
+Insert Into emp values (4,'Hasan Sarwar','CSE'), (5,'Swakkhar','CSE');
+
+select * from emp;
+
+Output :
+
++----+--------------+------+
+| id | name         | dept |
++----+--------------+------+
+|  1 | CMR          | CSE  |
+|  2 | Salekul      | CSE  |
+|  3 | Rezwan       | EEE  |
+|  4 | Hasan Sarwar | CSE  |
+|  5 | Swakkhar     | CSE  |
++----+--------------+------+
+
+alter table emp add column email varchar(20); // Add New Column in Table
+
+alter table emp add column salary numeric(8); // Add New Column in Table
+
+DELETE FROM emp WHERE id=5; // Delete id=5 Row From 'emp' Table
+
+ALTER TABLE emp DROP COLUMN Salary; // Delete a Column 'Salary'
+
+update emp set email='test@gmail.com' where id=1 ;  // Insert Email In Previous Field
+update emp set salary=50000 where id=2; // Insert Salary In Previous Field
+
+Select Distinct Name From emp; // Only Show One Name From Multiple Same Name From a Column
+
+SELECT Name, Dept FROM emp Order By Id; //By Default Ascending Sort
+
+SELECT ID, Name, Dept FROM emp Order By Id Desc;
+
+SELECT name,species, birth FROM pet ORDER BY species, birth DESC; //Species - ASC &&  Birth Desc [Last Born, First in The List].
+
+SELECT name, birth, CURDATE(), TIMESTAMPDIFF(YEAR, birth,CURDATE()) As Age FROM Pet; // Show Age In 'Year' = Curent Date - Birth Date
+
