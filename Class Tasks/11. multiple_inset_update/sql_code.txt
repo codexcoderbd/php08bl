@@ -1,0 +1,13 @@
+db name---dbmultiple
+
+table name---users
+
+create table sql code---
+
+CREATE DATABASE `dbmultiple` ;
+
+CREATE TABLE `dbmultiple`.`users` (
+`id` INT( 5 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`first_name` VARCHAR( 25 ) NOT NULL ,
+`last_name` VARCHAR( 35 ) NOT NULL 
+) ENGINE = MYISAM ;
